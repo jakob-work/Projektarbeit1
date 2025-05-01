@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotive Video Project Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@pdf-lib/fontkit@1.0.0"></script>
+</head>
+
+<!--Body-->
+<body>
+    <h1>Automotive Video Project Form</h1>
+    <form id="videoProjectForm">
+
+        <!--Disclaimer-->
+        <div class="form-group disclaimer">
+            <label for="disclaimer">Please make sure that you select the right parameters depending on your device,
+                 <strong style="font-weight: bold;">not all</strong> video devices support them.</label>
+            <label for="disclaimer">
+                If additional support is needed, please contact: <strong style="font-weight: bold;">ats.sales@goepel.com</strong>
+            </label>
+        </div>
+
+        <!--General Information-->
+        <h2>General Information</h2>
+        
+        <div class="form-group">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contactPerson">Technical Contact Person (Email):</label>
+            <select id="contactPerson" name="contactPerson" required>
+                <option value="">Select a contact person</option>
+                <option value="jakob.buschke@goepel.com">jakob.buschke@goepel.com</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="projectTitle">Project Title:</label>
+            <input type="text" id="projectTitle" name="projectTitle" required>
+        </div>
+
+        <div class="form-group textBox">
+            <label for="useCase">Expected use case (What is the application like?):</label>
+            <textarea id="useCase" name="useCase" rows="5" required></textarea>
+        </div>
+
+        <!--Technical Basics-->
+        <h2>Basic Technical Information</h2>
+        <div class="form-group">
+            <label for="plannedQuantity">Planned Quantity of Hardware:</label>
+            <div class="slider-wrapper">
+                <input type="number" id="plannedQuantityEditable" name="plannedQuantityEditable" min="1" max="10" value="1" required style="width: 60px; margin-right: 10px;">
+                <input type="range" id="plannedQuantity" name="plannedQuantity" min="1" max="10" value="1" data-value="1" required>
+                <span class="slider-display" id="plannedQuantityDisplay">1</span>
+            </div>
+        </div>  
+
+        <!-- Desired Hardware Format Section -->
+        <div class="form-group">
+            <label>
+                Desired hardware format:
+                <span class="info-icon"><span class="info-text">i</span></span>
+                <div class="tooltip">
+                    <span>
+                        <strong>Box(GigE):</strong><br>
+                        - Ideal for lab setups<br>
+                        - Portable environments<br>
+                        - Easy to integrate
+                    </span>
+                    <span>
+                        <strong>PCIe Card:</strong><br>
+                        - Perfect for demanding tasks<br>
+                        - Very fast data transfer<br>
+                        - Low latency
+                    </span>
+                    <span>
+                        <strong>PXIe Card:</strong><br>
+                        - Advanced test environments<br>
+                        - High scalability<br>
+                        - Real time capability
+                    </span>
+                </div>
+            </label>
+            <div class="hardware-format-options">
+                <div class="hardware-option">
+                    <label class="btn btn-option">
+                        <input type="radio" name="testHardwareFormat[]" value="Box (GigE)"> Box (GigE)
+                    </label>
+                    <img src="images/Box.png" alt="Box (GigE)" class="hardware-image">
+                </div>
+                <div class="hardware-option">
+                    <label class="btn btn-option">
+                        <input type="radio" name="testHardwareFormat[]" value="PCIe Card"> PCIe Card
+                    </label>
+                    <img src="images/PCIeCard.png" alt="PCIe Card" class="hardware-image">
+                </div>
+                <div class="hardware-option">
+                    <label class="btn btn-option">
+                        <input type="radio" name="testHardwareFormat[]" value="PXIe Card"> PXIe Card
+                    </label>
+                    <img src="images/PXIeCard.png" alt="PXIe Card" class="hardware-image">
+                </div>
+            </div>
+        </div>
+
+        <!--Basic Tech-->
+        <div class="form-group">
+            <label for="videoInputs">Number of Video Inputs on UUT:</label>
+            <div class="slider-wrapper">
+                <input type="number" id="videoInputsEditable" name="videoInputsEditable" min="1" max="10" value="1" required style="width: 60px; margin-right: 10px;">
+                <input type="range" id="videoInputs" name="videoInputs" min="1" max="10" value="1" required>
+                <span class="slider-display" id="videoInputsDisplay">1</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="videoOutputs">Number of Video Outputs on UUT:</label>
+            <div class="slider-wrapper">
+                <input type="number" id="videoOutputsEditable" name="videoOutputsEditable" min="1" max="10" value="1" required style="width: 60px; margin-right: 10px;">
+                <input type="range" id="videoOutputs" name="videoOutputs" min="1" max="10" value="1" required>
+                <span class="slider-display" id="videoOutputsDisplay">1</span>
+            </div>
+        </div>
+
+        <div id="dynamicInputsContainer">
+            <!-- Placeholder for dynamically added UUT Video IN/OUT sections -->
+        </div>
+
+        <!--Add UUT Video IN/OUT Button -->
+        <button type="button" id="addInputOutput" class="add-video-parameter">Add UUT Video IN/OUT</button>
+
+        <!--Submit Button -->
+        <button type="button" id="submitForm" class="submit-button">Submit</button>
+
+    </form>
+    <!--Incooperating Functions-->
+    <script type="module" src="script.js"></script>
+    <script type="module" src="pdfPrint.js"></script>
+</body>
+</html>

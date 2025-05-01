@@ -1,0 +1,1285 @@
+/* General Page Styles */
+body {
+    font-family: Arial;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Header Styles */
+h1, h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .form-group label {
+    font-weight: bold !important;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Form Container */
+form {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form button, 
+form .btn, 
+form .btn-option, 
+form .chip-options .btn.option {
+    font-weight: normal !important;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Make form groups span the full width */
+    max-width: 600px; /* Match the width of UUT Video IN/OUT 1 */
+    margin: 0 auto 20px; /* Center and add spacing */
+    align-items: center;
+    text-align: center;
+}
+
+/* Disclaimer Section */
+.form-group.disclaimer label {
+    width: 500px;
+    max-width: 600px;
+    margin-bottom: 2px;
+    align-items: center;
+    text-align: center;
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+.disclaimer label {
+    font-weight: normal !important;
+}
+
+/* Input and Label Styles */
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.form-group label.sideband-option {
+    font-weight: normal !important;
+}
+
+input, select, textarea, button {
+    width: 100%; /* Make inputs span the full width */
+    max-width: 800px; /* Match the form group width */
+    padding: 10px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Textarea Styles */
+textarea {
+    resize: vertical;
+}
+
+/* Button Styles */
+button {
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    font-weight: normal;
+}
+
+button:hover {
+    background: #ffffff;
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* Checkbox and Radio Button Styles */
+.checkbox-group.full-width {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkbox-group.full-width label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    text-align: center;
+}
+
+.checkbox-group.full-width input[type="radio"],
+.checkbox-group.full-width input[type="checkbox"] {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+    .form-group,
+    .checkbox-group.full-width {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Remove Button */
+.remove-video-parameter {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    width: 50%; /* Adjust width if needed */
+    font-weight: normal;
+}
+
+/* Button Group */
+.btn-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* Make button groups span the full width */
+    max-width: 800px; /* Match the form group width */
+}
+
+@media (max-width: 800px) {
+    .btn-group {
+        flex-direction: row; /* enforce horizontal layout on mobile as well */
+    }
+}
+
+/* Button Options */
+.btn-group .btn.option {
+    flex: 1;              /* Optional: make buttons equally sized */
+    text-align: center;
+    margin: 0;
+    max-width: 100px;     /* Adjust max width as needed */
+}
+
+.btn-option {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    user-select: none;
+    width: auto;         /* Remove fixed percentage width */
+    flex: 1;             /* Let the button grow equally */
+    text-align: center;
+    font-weight: normal;
+}
+
+.btn-option input {
+    display: none; /* Hide default radio input */
+}
+
+.btn-option.active {
+    background-color: #0004e7;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* Signal Direction */
+.form-group .btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 800px) {
+    .remove-video-parameter {
+        width: 800px; /* Full width on smaller screens */
+    }
+    .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Power Supply Section */
+.power-supply-details {
+    display: none;
+    margin-top: 10px;
+}
+
+.btn-option {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    width: 20%;
+    align-items: center;
+    font-weight: normal;
+}
+
+.btn-option.active {
+    background-color: #0004e7;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* Sideband Communication */
+.sideband-group {
+    display: flex;
+    flex-wrap: nowrap;      /* Prevent wrapping */
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.sideband-option {
+    display: inline-block;
+    padding: 8px 12px;  /* reduced padding */
+    background-color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    color: #000000;
+    border: 1px solid #000000;
+    min-width: 85px;   /* reduced min-width */
+}
+
+.sideband-option input {
+    display: none; /* Hide default checkbox input */
+}
+
+.sideband-option.active {
+    background-color: #0004e7;
+    border-color: #000000;
+    color: #ffffff;
+}
+
+.sideband-option {
+    font-weight: normal !important;
+}
+
+/* IC Type Selection */
+.ic-type-container {
+    margin-top: 10px;
+}
+
+.icType-placeholder {
+    font-weight: normal !important;
+    /* the rest stays the same */
+    display: inline-block;
+    width: 200px;      
+    height: 38px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 18px;
+    margin-left: 10px;
+}
+
+.icType-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;      
+    height: 38px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* Hardware Format Options */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Add some space between buttons */
+}
+
+.buttons .btn.option {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 100px; /* Ensure buttons have a minimum width */
+    flex: 1; /* Allow buttons to grow and shrink */
+    max-width: 150px; /* Set a maximum width for buttons */
+    font-weight: normal;
+}
+
+/* Active state for video connector buttons */
+.buttons .btn.option.active {
+    background-color: #0004e7;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.video-parameter .btn {
+    display: block !important;
+    margin: 10px auto;
+    text-align: center;
+    width: 50%;
+}
+
+#addInputOutput {
+    display: block;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 20px auto; /* Centers the button */
+    text-align: center;
+    width: 100%; /* Adjust width as needed */
+    max-width: 800px; /* Prevents it from being too large */
+    font-weight: normal;
+}
+
+.submit-button {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    width:10%;
+    max-width: 800px;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: normal;
+    position: relative;
+    z-index: 10;
+}
+
+/* Range Input Styles */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none; /* Standard property defined for compatibility */
+    width: 100%;
+    background: transparent;
+    margin: 8px 0;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    background: #000000;
+    border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; /* Standard property defined for compatibility */
+    height: 20px;
+    width: 20px;
+    margin-top: -7px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative; /* Allow positioning of pseudo-element */
+}
+
+/* Add a pseudo-element to display the slider value inside the thumb */
+input[type="range"]::-webkit-slider-thumb::after {
+    content: attr(data-value);
+    position: absolute;
+    top: -30px; /* adjust vertical position as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* More Button */
+.more-button {
+    max-width: 100px;
+    margin-top: 5px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.more-button:hover {
+    background: #333333;
+}
+
+/* Slider Wrapper */
+.slider-wrapper {
+    position: relative;
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* Make sliders span the full width */
+    max-width: 600px; /* Match the form group width */
+}
+
+.slider-display {
+    display: none; 
+}
+
+/* PDF Preview Section */
+.pdf-grey-bar {
+    background-color: #f5f5f5; /* Light grey */
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Button styles for PDF consistency */
+.pdf-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0004e7; /* Blue */
+    color: #ffffff; /* White text */
+    border: 1px solid #000000;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 5px;
+}
+
+/* Error Messages */
+.error-message {
+    color: #ff0000;
+    text-align: center;
+    animation: flashError 1s ease-in-out;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+@keyframes flashError {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.error-highlight {
+    border: 2px solid #ff0000;
+    animation: flashBorder 0.5s ease-in-out;
+}
+
+@keyframes flashBorder {
+    0%, 100% { border-color: #ff0000; }
+    50% { border-color: transparent; }
+}
+
+/* Logo Section */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 400px;
+    height: auto;
+}
+
+/* Tooltip Styles */
+.info-icon {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    line-height: 25px; 
+    text-align: center;
+    font-size: 8px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 0px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.info-text {
+    display: inline-block;
+    position: relative;
+    top: -4px; 
+    font-size: 13px !important;
+}
+
+
+.info-icon:hover::after {
+    display: block; 
+}
+
+.info-icon:hover::before {
+    display: block; /* Show arrow on hover */
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    bottom: 125%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #f5f5f5; /* Light grey */
+    color: #000000; /* Black text for contrast */
+    padding: 10px;
+    border-radius: 4px;
+    width: 600px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    column-count: 3;
+    column-gap: 10px;
+    white-space: normal;
+}
+
+/* Tooltip arrow styling */
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #f5f5f5 transparent transparent transparent; /* Match tooltip background */
+}
+
+/* Tooltip styling for "tooltip textbox" */
+.tooltip.textbox {
+    display: none;
+    position: absolute;
+    bottom: 125%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #f5f5f5; /* Light grey */
+    color: #000000; /* Black text for contrast */
+    padding: 10px;
+    border-radius: 4px;
+    width: auto; /* Adjust width as needed */
+    max-width: 500px; /* Limit maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    white-space: normal;
+    font-size: 14px;
+    z-index: 10;
+}
+
+/* Specific styling for the second tooltip */
+.tooltip.textbox.second-tooltip {
+    background-color: #ffffff; /* Light grey */
+    color: #000000; /* Black text for contrast */
+    width: 400px; /* Set a fixed width */
+    max-width: 600px; /* Optional: Limit the maximum width */
+    text-align: left; /* Align text to the left */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Ensure long words break properly */
+    padding: 10px;
+    font-size: 14px;
+    line-height: 2; /* Improve readability */
+    column-count: unset; /* Remove columns */
+    column-gap: unset; /* Remove column gaps */
+}
+
+/* Tooltip arrow for "tooltip textbox" */
+.tooltip.textbox::before {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #f5f5f5 transparent transparent transparent; /* Match tooltip background */
+}
+
+/* Tooltip styling for "tooltip textbox" */
+.tooltip.textbox {
+    display: none;
+    position: absolute;
+    bottom: 125%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    border-radius: 4px;
+    width: auto; /* Adjust width as needed */
+    max-width: 500px; /* Limit maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    white-space: normal;
+    font-size: 14px;
+    z-index: 10;
+}
+
+/* Each text block appears as its own block element */
+.tooltip span {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+/* Show tooltip when hovering the info icon */
+.info-icon:hover + .tooltip,
+.tooltip:hover {
+    display: block;
+}
+
+/* Optional: add an arrow to the tooltip */
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+/* Tooltip styling for "tooltip textbox" */
+.tooltip.textbox {
+    display: none;
+    position: absolute;
+    bottom: 125%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    border-radius: 4px;
+    width: auto; /* Adjust width as needed */
+    max-width: 500px; /* Limit maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    white-space: normal;
+    font-size: 14px;
+    z-index: 10;
+}
+
+/* Show tooltip when hovering over the info icon using the general sibling selector */
+.info-icon:hover ~ .tooltip.textbox {
+    display: block;
+}
+
+/* Optional: add an arrow to the tooltip */
+.tooltip.textbox::before {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+/* New class to show tooltip */
+.tooltip.textbox.visible {
+    display: block;
+}
+
+/* Labels */
+label {
+    position: relative;
+    display: inline-block;
+}
+
+.signal-direction-container select,
+.signal-direction-container .icType-placeholder {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 150px;  /* Adjust minimum width as needed */
+    margin-right: 10px;
+}
+
+.signal-direction-container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Make the container span the full width */
+}
+
+.signal-direction-container select {
+    flex-grow: 1; /* Allow the select box to grow and fill available space */
+    font-size: 16px; /* Match the size of the "Pixel Clock" box */
+    padding: 10px; /* Match padding */
+    height: 38px; /* Match height */
+    margin-right: 10px; /* Add spacing between the select and the placeholder */
+    box-sizing: border-box;
+}
+
+.icType-placeholder {
+    display: none; /* Hidden by default */
+    width: 200px; /* Fixed width for the placeholder */
+    height: 38px; /* Match height with the select box */
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px; /* Match font size */
+    line-height: 18px;
+}
+
+.icType-placeholder {
+    width: 200px;
+    height: 38px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 10px;
+    /* Center text vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-group.two-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-group.two-buttons label.btn-option {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+/* Power Supply Buttons */
+.power-supply-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.power-supply-buttons .btn-option {
+    flex: 1; /* Allow buttons to grow equally */
+    text-align: center;
+    margin: 0;
+    padding: 8px 16px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.power-supply-buttons .btn-option.active {
+    background-color: #0004e7;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* Power Supply Wrapper */
+.power-supply-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Adjust the power supply details input when visible */
+.power-supply-details {
+    margin: 0;
+    flex: 1;
+    max-width: 300px; /* Adjust as needed */
+}
+
+/* Adjust the power supply details styling for a cleaner look */
+.power-supply-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    flex: none;
+    width: 300px; /* Fixed width for consistency */
+}
+
+.power-supply-details label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.power-supply-details input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Chip Manufacturer Options */
+.chip-options .btn.option {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+    text-align: center;
+    flex: 1;
+    width: 600px;
+    line-height: 20px; 
+    height: auto; 
+    font-weight: normal;
+}
+
+/* Standardize Remove, Add, and Submit Buttons */
+.remove-video-parameter,
+#addInputOutput,
+.submit-button {
+    display: inline-block;
+    padding: 8px 16px; 
+    margin: 10px auto;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    width: 600px;
+    line-height: 20px; 
+    height: auto; 
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* Standardize Chip Option Buttons (FPD Link, GMSL, etc.) */
+.chip-options .btn.option {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+    text-align: center;
+    width: 150px; /* Set a fixed width for consistency */
+    max-width: 150px;
+    height: auto; /* Let padding determine height */
+    line-height: 20px; /* Ensure consistent height */
+    font-weight: normal;
+}
+
+/* Active state for chip option buttons */
+.chip-options .btn.option.active {
+    background-color: #0004e7;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* Standardize Chip Manufacturer Option Buttons */
+.chip-options .btn.option {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    text-align: center;
+    width: 600px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: normal;
+}
+.chip-options .btn.option.active {
+    background-color: #0004e7;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* Standardize Chip Option Buttons (FPD Link, GMSL, etc.) to match HDCP buttons */
+.chip-options .btn.option {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    max-width: 600px;  /* Matches HDCP buttons */
+    padding: 8px 16px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: normal;
+}
+.chip-options .btn.option.active {
+    background-color: #0004e7;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* Typography */
+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong),
+*::before,
+*::after {
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: normal !important;
+    line-height: 1.5 !important;
+}
+
+/* Ensure strong elements remain bold */
+strong {
+    font-weight: bold !important;
+}
+
+/* Ensure button text is not bold */
+button, .btn, .btn-option, .chip-options .btn.option {
+    font-weight: normal !important;
+}
+
+/* Hardware Images */
+.hardware-images {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    gap: 55px;
+    margin-bottom: 40px;
+}
+
+.hardware-image {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Video Connector */
+.video-connector-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+.video-connector-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;  
+}
+.video-connector-images input[name="otherVideoConnectorType"] {
+    width: 100px;
+    height: 90px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    visibility: hidden; 
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.video-connector-images input[name="otherVideoConnectorType"].visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Hide the “other” textarea by default but reserve space */
+.video-connector-images textarea[name="otherVideoConnectorType"] {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Adjust the "Other" textarea width */
+.video-connector-images textarea[name="otherVideoConnectorType"] {
+    width: 200px; 
+    max-width: 200px; 
+    margin-top: 10px;
+    box-sizing: border-box; 
+}
+
+/* When visible, show the textarea */
+.video-connector-images textarea[name="otherVideoConnectorType"].visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* When “Other” is selected, hide the images */
+.video-connector-images.hide-images img {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip Wrapper */
+.info-tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.info-tooltip-wrapper .tooltip.textbox {
+    display: none;
+    position: absolute;
+    bottom: 125%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    width: auto;
+    max-width: 500px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    white-space: normal;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.info-tooltip-wrapper:hover .tooltip.textbox {
+    display: block;
+}
+
+/* Optional: add an arrow */
+.info-tooltip-wrapper .tooltip.textbox::before {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Specific styling for the second tooltip */
+.info-tooltip-wrapper .tooltip.textbox.second-tooltip {
+    width: 400px; /* Set a fixed width */
+    max-width: 600px; /* Optional: Limit the maximum width */
+    text-align: left; /* Align text to the left */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Ensure long words break properly */
+    padding: 10px;
+    font-size: 14px;
+    line-height: 2; /* Improve readability */
+    column-count: unset; /* Remove columns */
+    column-gap: unset; /* Remove column gaps */
+}
+
+/* Tooltip Styling */
+.info-tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.info-tooltip-wrapper .tooltip.textbox {
+    display: none;
+    position: absolute;
+    bottom: 125%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    border-radius: 4px;
+    width: auto; /* Adjust width as needed */
+    max-width: 500px; /* Limit maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    white-space: normal;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.info-tooltip-wrapper:hover .tooltip.textbox {
+    display: block;
+}
+
+/* Optional: add an arrow to the tooltip */
+.info-tooltip-wrapper .tooltip.textbox::before {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.hardware-format-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.hardware-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hardware-option .hardware-image {
+    margin-top: 10px;
+    max-width: 100px;
+    height: auto;
+}
+
+.hardware-format-options {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+.hardware-format-options .btn-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    max-width: 600px;  /* Matches other form elements */
+    box-sizing: border-box;
+}
+
+/* Desired Hardware Format Section */
+.hardware-format-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto;
+}
+
+.hardware-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.hardware-option .btn-option {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.hardware-option .btn-option.active {
+    background-color: #0004e7;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.hardware-option .hardware-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
